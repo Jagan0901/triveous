@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { Login } from "./Pages/Authentication/Login";
+import { Register } from "./Pages/Authentication/Register";
+import { Home } from "./Pages/NewsTopics/Home";
+import { Apple } from "./Pages/NewsTopics/Apple";
+import { Business } from "./Pages/NewsTopics/Business";
+import { Tesla } from "./Pages/NewsTopics/Tesla";
+import { Journals } from "./Pages/NewsTopics/Journals";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/apple" element={<Apple />} />
+        <Route path="/business" element={<Business />} />
+        <Route path="/tesla" element={<Tesla />} />
+        <Route path="/wsj" element={<Journals />} />
+      </Routes>
     </div>
   );
 }
